@@ -11,30 +11,41 @@ use Illuminate\Validation\Rules\Password;
 
 class UsersController extends Controller
 {
-    public function index()
+    // Lista todos os usuários — renderiza a view com dados para montar os modais
+    public function index(Request $request)
     {
-        $users = User::with(['cargo', 'status'])->paginate(15);
-        return view('users.index', compact('users'));
+        $users      = User::with(['cargo', 'status'])->paginate(15);
+        $cargos     = UsersCargosModel::all();
+        $statuses   = UsersStatusModel::all();
+        $activeMenu = $request->segment(1) ?? 'users';
+
+        return view('users.index', compact('users', 'cargos', 'statuses', 'activeMenu'));
     }
 
+    // Retorna os dados necessários para popular o modal de criação via AJAX
     public function create()
     {
-        $cargos = UsersCargosModel::all();
+        $cargos   = UsersCargosModel::all();
         $statuses = UsersStatusModel::all();
-        return view('auth.register', compact('cargos', 'statuses'));
+
+        return response()->json([
+            'cargos'   => $cargos,
+            'statuses' => $statuses,
+        ]);
     }
 
-    public function store(Request $request)
+    // Rota: POST /register — cria um novo usuário (usada pelo modal de criação/dashboard)
+    public function register(Request $request)
     {
         $request->validate([
             'name'      => ['required', 'string', 'max:255'],
             'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password'  => ['required', 'confirmed', Password::defaults()],
+            'password'  => ['required', 'confirmed', Password::min(8)],
             'cargo_id'  => ['required', 'exists:cargos_users,id'],
             'status_id' => ['required', 'exists:status_users,id'],
         ]);
 
-        User::create([
+        $user = User::create([
             'name'      => $request->name,
             'email'     => $request->email,
             'password'  => Hash::make($request->password),
@@ -42,23 +53,27 @@ class UsersController extends Controller
             'status_id' => $request->status_id,
         ]);
 
-        return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso.');
+        return response()->json([
+            'message' => 'Usuário criado com sucesso.',
+            'user'    => $user->load(['cargo', 'status']),
+        ], 201);
     }
 
-    public function show(string $id)
-    {
-        $user = User::with(['cargo', 'status'])->findOrFail($id);
-        return view('users.index', compact('user'));
-    }
-
+    // Retorna os dados de um usuário para popular o modal de edição via AJAX
     public function edit(string $id)
     {
-        $user     = User::findOrFail($id);
+        $user     = User::with(['cargo', 'status'])->findOrFail($id);
         $cargos   = UsersCargosModel::all();
         $statuses = UsersStatusModel::all();
-        return view('users.index', compact('user', 'cargos', 'statuses'));
+
+        return response()->json([
+            'user'     => $user,
+            'cargos'   => $cargos,
+            'statuses' => $statuses,
+        ]);
     }
 
+    // Atualiza os dados do usuário — chamado pelo modal de edição via AJAX
     public function update(Request $request, string $id)
     {
         $user = User::findOrFail($id);
@@ -74,21 +89,27 @@ class UsersController extends Controller
 
         if ($request->filled('password')) {
             $request->validate([
-                'password' => ['confirmed', Password::defaults()],
+                'password' => ['confirmed', Password::min(8)],
             ]);
             $data['password'] = Hash::make($request->password);
         }
 
         $user->update($data);
 
-        return redirect()->route('users.index')->with('success', 'Usuário atualizado com sucesso.');
+        return response()->json([
+            'message' => 'Usuário atualizado com sucesso.',
+            'user'    => $user->fresh(['cargo', 'status']),
+        ]);
     }
 
+    // Remove o usuário — chamado pelo modal de confirmação de remoção via AJAX
     public function destroy(string $id)
     {
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('users.index')->with('success', 'Usuário removido com sucesso.');
+        return response()->json([
+            'message' => 'Usuário removido com sucesso.',
+        ]);
     }
 }
