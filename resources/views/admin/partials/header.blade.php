@@ -1,25 +1,11 @@
 <div class="header">
 
-    <!-- Logo + Toggles -->
-    <div class="header-left">
-        <a href="{{ route('dashboard') }}" class="logo">
-            <span style="font-size:1.3rem;font-weight:700;color:#fff;">Restaurante</span>
-        </a>
-        <a href="{{ route('dashboard') }}" class="logo logo-small">
-            <span style="font-size:1.1rem;font-weight:700;color:#fff;">R</span>
-        </a>
-        <a href="javascript:void(0);" id="toggle_btn">
-            <i class="feather-chevrons-left"></i>
-        </a>
-        <a class="mobile_btn" id="mobile_btn">
-            <i class="feather-menu"></i>
-        </a>
-    </div>
+
 
     <!-- Search -->
     <div class="top-nav-search">
         <form>
-            <input type="text" class="form-control" placeholder="Buscar...">
+            <input type="text" class="form-control" placeholder="Buscar..." style="border-radius: 40px; border:none">
             <button class="btn" type="submit"><i class="feather-search"></i></button>
         </form>
     </div>

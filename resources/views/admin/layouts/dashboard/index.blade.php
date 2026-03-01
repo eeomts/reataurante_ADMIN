@@ -7,6 +7,7 @@
     <title>@yield('title', 'Admin') — Restaurante</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('bootstrap-icons.min.css') }}">
 
     @stack('styles')
 </head>
@@ -15,10 +16,10 @@
 <div class="main-wrapper">
 
     {{-- Header --}}
-    @include('partials.header')
+    @include('admin.partials.header')
 
     {{-- Sidebar --}}
-    @include('partials.sidebar')
+    @include('admin.partials.sidebar')
 
     {{-- Conteúdo principal --}}
     <div class="page-wrapper">
