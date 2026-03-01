@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ORGANIZACAO.md",
+                "file": "IDEIAS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ORGANIZACAO"
+              "title": "IDEIAS"
             }
           }
         ]
@@ -185,6 +185,7 @@
   },
   "active": "01c850417c3ac9dc",
   "lastOpenFiles": [
-    "ORGANIZACAO.md"
+    "ORGANIZACAO.md",
+    "IDEIAS.md"
   ]
 }
