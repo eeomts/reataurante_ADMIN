@@ -58,7 +58,7 @@ html {
 	height: 100%;
 }
 body {
-	background-color: #fff;
+	background-color: #F7F7F7;
 	color: #000;
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 16px;
@@ -100,7 +100,7 @@ input:-webkit-autofill:focus {
 	font-family: 'Titillium Web', sans-serif;
 }
 .form-control:focus {
-	box-shadow: 0 0 10px rgba(136, 136, 136, 0.125); 
+	box-shadow: 0 0 10px rgba(136, 136, 136, 0.125);
 	outline: 0 none;
 	border-color: #c1c9d0;;
 }
@@ -130,7 +130,7 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
-p:last-child { 
+p:last-child {
     margin-bottom: 0;
 }
 dl, ol, ul {
@@ -170,7 +170,7 @@ textarea.form-control {
 }
 .form-group {
 	margin-bottom: 1.25rem;
-} 
+}
 label {
     display: inline-block;
     margin-bottom: 10px;
@@ -1180,7 +1180,7 @@ button.bg-danger:hover {
 .zone input {
 	cursor: pointer;
 	display: block;
-	
+
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -1188,7 +1188,7 @@ button.bg-danger:hover {
 	border-radius: 5px;
 }
 .zone label {
-	
+
 }
 .zone input[type=file] {
  	opacity: 0;
@@ -1854,9 +1854,9 @@ button.bg-danger:hover {
 -----------------------*/
 
 .header {
-	background: #fff;
+	background: #F7F7F7;
 	border-bottom: 1px solid #EEF1FE;
-	left: 0;
+	left: 240px;
 	position: fixed;
 	right: 0;
 	top: 0;
@@ -1875,7 +1875,7 @@ button.bg-danger:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: #FFF8F7;
+	background: #fff;
 }
 .header .header-left .logo {
 	display: inline-block;
@@ -2189,7 +2189,7 @@ html.menu-opened body {
     display: flex;
     justify-content: space-between;
 }
-.chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-name, 
+.chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-name,
 .chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-last-chat {
     max-width: 250px;
     overflow: hidden;
@@ -2383,7 +2383,7 @@ html.menu-opened body {
     border: none;
     box-shadow: none;
 }
-.chat-window .chat-cont-right .chat-footer .input-group .input-group-prepend .btn, 
+.chat-window .chat-cont-right .chat-footer .input-group .input-group-prepend .btn,
 .chat-window .chat-cont-right .chat-footer .input-group .input-group-append .btn {
     background-color: transparent;
     border: none;
@@ -2695,12 +2695,12 @@ html.menu-opened body {
 -----------------------*/
 
 .sidebar {
-	background-color: #FFF8F7; 
+	background-color: #fff;
 	bottom: 0;
 	left: 0;
 	margin-top: 0;
 	position: fixed;
-	top: 60px;
+	top: 0;
 	transition: all 0.2s ease-in-out 0s;
 	width: 240px;
 	z-index: 1001;
@@ -2715,7 +2715,7 @@ html.menu-opened body {
 	height: 100%;
 	min-height: 100%;
 	transition: all 0.2s ease-in-out 0s;
-} 
+}
 .sidebar-menu {
 	padding: 15px;
 }
@@ -2732,20 +2732,23 @@ html.menu-opened body {
 	font-size: 15px;
 	height: auto;
 	padding: 10px 15px;
+	transition: color 0.25s ease, background-color 0.25s ease;
+	border-radius: 5px;
 }
-.sidebar-menu li a:hover {
-	color: #1B2A6B;
-}
+.sidebar-menu li a:hover,
 .sidebar-menu > ul > li > a:hover {
-	background-color: rgba(118, 56, 255, 0.05);
-    color: #1B2A6B; 
+	color: #0d0f17;
+	background-color: #EFEFEF;
 }
 .sidebar-menu li.active > a {
-    color: #1B2A6B;
+    color: #FFFFFF;
     position: relative;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 6%);
+    background: #1B2A6B;
     border-radius: 5px;
+}
+.sidebar-menu li.active > a:hover {
+    background: #162259;
+    color: #FFFFFF;
 }
 .menu-title {
 	color: #1B2A6B;
@@ -2854,7 +2857,7 @@ html.menu-opened body {
 	top: 10px;
 }
 .sidebar-menu > ul > li > a {
-	align-items: center; 
+	align-items: center;
 	display: flex;
 	justify-content: flex-start;
 	padding: 10px 15px;
@@ -2946,7 +2949,7 @@ html.menu-opened body {
 .fc-unthemed .fc-popover {
 	border-color: #f3f3f3;
 }
-.fc-basic-view .fc-day-number, 
+.fc-basic-view .fc-day-number,
 .fc-basic-view .fc-week-number {
     padding: 2px 5px;
 }
@@ -3276,7 +3279,7 @@ table.table-inbox tbody tr.checked {
 }
 .page-wrapper > .content {
 	padding: 1.875rem 1.875rem 0;
-} 
+}
 .page-header {
     margin-bottom: 20px;
 }
@@ -3389,7 +3392,7 @@ table.table-inbox tbody tr.checked {
 	font-size: 12px;
 	z-index: 1;
 }
-.form-focus .form-control:focus ~ .focus-label, 
+.form-focus .form-control:focus ~ .focus-label,
 .form-focus .form-control:-webkit-autofill ~ .focus-label {
 	opacity: 1;
 	font-weight: 400;
@@ -3399,7 +3402,7 @@ table.table-inbox tbody tr.checked {
 }
 .form-focus .form-control {
 	height: 50px;
-	padding: 21px 12px 6px;	
+	padding: 21px 12px 6px;
 	border: 1px solid #E8EAF6;
 }
 .form-focus .form-control::-webkit-input-placeholder {
@@ -3505,7 +3508,7 @@ table.table-inbox tbody tr.checked {
 .social-login  {
 	border-bottom: 1px solid #E9E9E9;
     padding-bottom: 30px;
-}	
+}
 .social-login .btn:hover, .social-login .btn:focus {
 	color: #fff;
 }
@@ -3779,7 +3782,7 @@ table.table-inbox tbody tr.checked {
 }
 .custom-file-label::after {
 	margin: 0.1rem;
-	height: 41px;    
+	height: 41px;
 	border-radius: 5px;
 	padding: 10px 10px;
 	border-left: 0;
@@ -4013,9 +4016,9 @@ table.table-inbox tbody tr.checked {
 .activity-feed .feed-item .feed-text a {
 	color: #333;
 	font-weight: 600;
-} 
-.modal-icon i {   
-    font-size: 42px;   
+}
+.modal-icon i {
+    font-size: 42px;
     color: #6c757d;
 }
 .modal-footer {
@@ -4043,7 +4046,7 @@ table.table-inbox tbody tr.checked {
 	padding: 40px;
 	border-radius: 50%;
 	background: #C5CBE8;
-	position: absolute; 
+	position: absolute;
 	bottom: -27px;
 	right: -27px;
 	font-size: 60px;
@@ -4199,7 +4202,7 @@ table.table-inbox tbody tr.checked {
 	position: relative;
 	display: -inline-flexbox;
 	display: inline-flex;
-	vertical-align: middle; 
+	vertical-align: middle;
 }
 
 /*-----------------
@@ -4485,8 +4488,8 @@ table.table-inbox tbody tr.checked {
     display: none;
 }
 .onoffswitch-label {
-    display: block; 
-	overflow: hidden; 
+    display: block;
+	overflow: hidden;
 	cursor: pointer;
 	border-radius: 20px;
 	margin-bottom: 0;
@@ -4538,7 +4541,7 @@ table.table-inbox tbody tr.checked {
     margin-left: 0;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+    right: 0px;
 }
 .settings-btns {
 	font-family: 'Titillium Web', sans-serif;
@@ -4749,7 +4752,7 @@ table.table-inbox tbody tr.checked {
 	-webkit-transform: translate3d(.81094rem, 50%, 0);
 	transform: translate3d(.81094rem, 50%, 0)
 }
- 
+
 /*-----------------
 	24. Profile
 -----------------------*/
@@ -5440,6 +5443,22 @@ table.table-inbox tbody tr.checked {
 	font-size: 14px;
 	font-weight: 400;
 }
+
+/* Datatable Users - Reduced Padding */
+.datatable th {
+	padding: 12px 8px !important;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.datatable td {
+	padding: 10px 8px !important;
+	vertical-align: middle;
+}
+
+.datatable tr {
+	height: auto;
+}
 .user-active-btn,
 .user-active-btn:hover {
 	color: #088E25;
@@ -5864,6 +5883,116 @@ table.table-inbox tbody tr.checked {
 .btn.btn-success:hover {
 	background: #019C7B;
 }
+
+/* Icon Wrapper Styles */
+.wrapper {
+	display: inline-flex;
+	list-style: none;
+	align-items: center;
+	gap: 6px;
+	font-family: "Poppins", sans-serif;
+	justify-content: center;
+}
+
+.wrapper .icon {
+	position: relative;
+	background: #fff;
+	border-radius: 50%;
+	margin: 0 3px;
+	width: 36px;
+	height: 36px;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+	position: absolute;
+	top: 0;
+	font-size: 12px;
+	background: #fff;
+	color: #fff;
+	padding: 4px 6px;
+	border-radius: 4px;
+	
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+	position: absolute;
+	content: "";
+	height: 8px;
+	width: 8px;
+	background: #fff;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%) rotate(45deg);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+	top: -40px;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+	
+}
+
+.wrapper .edit-icon:hover,
+.wrapper .edit-icon:hover .tooltip,
+.wrapper .edit-icon:hover .tooltip::before {
+	background: #007bff;
+	color: #fff;
+}
+
+.wrapper .delete-icon:hover,
+.wrapper .delete-icon:hover .tooltip,
+.wrapper .delete-icon:hover .tooltip::before {
+	background: #dc3545;
+	color: #fff;
+}
+
+.wrapper .icon a,
+.wrapper .icon button {
+	color: inherit;
+	border: none;
+	background: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+
+.wrapper form {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper .icon a i,
+.wrapper .icon button i {
+	font-size: 16px;
+	color: #333;
+}
+
+.wrapper .icon:hover a i,
+.wrapper .icon:hover button i {
+	color: #fff;
+}
+
 /*-----------------
 	28. Responsive
 -----------------------*/
@@ -5947,7 +6076,7 @@ table.table-inbox tbody tr.checked {
 	.mini-sidebar.expand-menu .sidebar .sidebar-menu ul > li > a span {
 		display: inline;
 		opacity: 1;
-	} 
+	}
 	.mini-sidebar .page-wrapper {
 		margin-left: 78px;
 	}
@@ -6191,7 +6320,7 @@ table.table-inbox tbody tr.checked {
 		font-size: 15px;
 		padding: 8px 26px;
 	}
-	.add-links { 
+	.add-links {
 		font-size: 15px;
 		padding: 8px 18px;
 	}
@@ -6364,4 +6493,56 @@ table.table-inbox tbody tr.checked {
 	.plan-price .nav {
 		display: flex;
 	}
+}
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border-bottom: 1px solid #EEF1FE;
+}
+.sidebar-logo a {
+    text-decoration: none;
+}
+.sidebar-logo a span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1B2A6B;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #EEF1FE;
+    padding: 8px 0;
+}
+.sidebar-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-footer ul li a,
+.sidebar-footer ul li button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 15px;
+    color: #333;
+    font-size: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.sidebar-footer ul li a:hover,
+.sidebar-footer ul li button:hover {
+    color: #1B2A6B;
+}
+.sidebar-footer ul li.active a {
+    color: #fff;
+    background: #1B2A6B;
+    border-radius: 5px;
 }
