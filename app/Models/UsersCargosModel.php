@@ -14,6 +14,6 @@ class UsersCargosModel extends Model
 
     public function users()
     {
-        return $this->hasOne(User::class, 'cargo_id');
+        return $this->hasMany(User::class, 'cargo_id');
     }
 }
