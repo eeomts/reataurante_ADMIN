@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function showLogin()
     {
-        return view('auth.login');
+        return view('admin.auth.login');
     }
 
     public function login(Request $request)
@@ -34,7 +34,7 @@ class AuthController extends Controller
 
     public function showForgotPassword()
     {
-        return view('auth.forgot-password');
+        return view('admin.auth.forgot-password');
     }
 
     public function sendResetLink(Request $request)

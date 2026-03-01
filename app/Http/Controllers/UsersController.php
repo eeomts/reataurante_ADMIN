@@ -19,7 +19,7 @@ class UsersController extends Controller
         $statuses   = UsersStatusModel::all();
         $activeMenu = $request->segment(1) ?? 'users';
 
-        return view('users.index', compact('users', 'cargos', 'statuses', 'activeMenu'));
+        return view('admin.users.index', compact('users', 'cargos', 'statuses', 'activeMenu'));
     }
 
     // Retorna os dados necessários para popular o modal de criação via AJAX

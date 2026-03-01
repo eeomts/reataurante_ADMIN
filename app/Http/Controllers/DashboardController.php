@@ -19,7 +19,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $activeMenu = $this->resolveActiveMenu($request);
-        return view('layouts.dashboard.index', compact('activeMenu'));
+        return view('admin.layouts.dashboard.index', compact('activeMenu'));
     }
 
     private function resolveActiveMenu(Request $request): string
