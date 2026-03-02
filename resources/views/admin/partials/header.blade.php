@@ -55,9 +55,6 @@
                 <a class="dropdown-item" href="#">
                     <i data-feather="user" class="me-1"></i> Perfil
                 </a>
-                <a class="dropdown-item" href="#">
-                    <i data-feather="settings" class="me-1"></i> Configurações
-                </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="dropdown-item text-danger">

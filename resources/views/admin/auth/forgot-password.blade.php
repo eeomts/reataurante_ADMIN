@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Admin — Esqueci a Senha</title>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-
-    <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
         <div class="login-wrapper">
             <div class="container">
+
+                <div class="text-center mb-4">
+                    <img src="/storage/logos/logo-sembg.png" alt="Logo" style="max-height: 80px; filter: invert(1); display: block; margin: 0 auto;">
+                </div>
 
                 <div class="loginbox">
                     <div class="login-right">
@@ -20,14 +21,12 @@
                             <h1>Esqueceu a senha?</h1>
                             <p class="account-subtitle">Digite seu e-mail para receber o link de redefinição de senha.</p>
 
-                            {{-- Mensagem de sucesso --}}
                             @if (session('status'))
                                 <div class="alert alert-success">
                                     {{ session('status') }}
                                 </div>
                             @endif
 
-                            {{-- Erros de validação --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     {{ $errors->first() }}
@@ -38,14 +37,7 @@
                                 @csrf
 
                                 <div class="form-group form-focus">
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        class="form-control floating"
-                                        value="{{ old('email') }}"
-                                        autocomplete="email"
-                                        autofocus
-                                    >
+                                    <input type="email" name="email" class="form-control floating" value="{{ old('email') }}" autocomplete="email" autofocus>
                                     <label class="focus-label">E-mail</label>
                                 </div>
 
@@ -69,7 +61,5 @@
             </div>
         </div>
     </div>
-    <!-- /Main Wrapper -->
-
 </body>
 </html>
